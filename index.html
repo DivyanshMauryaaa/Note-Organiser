@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note Organizer</title>
+    <title>Refined Note Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-            <div class="left-section">
-                <a href="#">Home</a>
-                <a href="#">Pinned Notes</a>
-                <a href="#">Reminders</a>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Categories</h2>
+            <div id="categories"></div>
+            <input type="text" id="new-category" placeholder="New category">
+            <button onclick="addCategory()">Add Category</button>
+        </div>
+        <div class="main-content">
+            <div class="navbar">
+                <input type="text" id="search" placeholder="Search notes">
+                <div>
+                    <button onclick="toggleNoteForm()">New Note</button>
+                    <button onclick="togglePinnedFilter()">Toggle Pinned</button>
+                    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+                </div>
             </div>
-            <div class="right-section">
-                <input type="text" class="search-bar" id="search" placeholder="Search Notes...">
-                <button class="create-button" id="addNoteButton">&#43; New</button>
+            <div class="content">
+                <div id="note-form" class="hidden">
+                    <input type="text" id="note-title" placeholder="Title">
+                    <div id="editor-container"></div>
+                    <input type="file" id="image-upload" class="image-upload" accept="image/*">
+                    <img id="image-preview" class="image-preview" />
+                    <select id="note-category"></select>
+                    <button onclick="saveNote()">Save Note</button>
+                    <button onclick="toggleNoteForm()">Cancel</button>
+                </div>
+                <div id="notes"></div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Sidebar for Categories -->
-
-
-    <!-- Main Content Section -->
-    <div class="main-content">
-        <div class="content-wrapper">
-            <h1>Your Notes</h1>
-            <div id="noteContainer"></div>
         </div>
     </div>
 
