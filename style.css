@@ -128,13 +128,11 @@ select {
 .category-item {
     padding: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .category-item:hover,
 .category-item.active {
-    background-color: var(--button-bg);
-    color: var(--button-text);
+    text-decoration: underline;
 }
 
 .category-item button {
@@ -162,4 +160,9 @@ select {
 
 .image-upload {
     margin-bottom: 10px;
+}
+
+.action:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

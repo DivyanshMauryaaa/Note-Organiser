@@ -12,6 +12,10 @@
 <body>
     <div class="container">
         <div class="sidebar">
+            <h2>Actions</h2>
+            <p class="action" onclick="toggleNoteForm()">New Note</p>
+            <p class="action" onclick="togglePinnedFilter()">Pinned</p>
+            <p class="action" onclick="toggleDarkMode()">Dark Mode</p>
             <h2>Categories</h2>
             <div id="categories"></div>
             <input type="text" id="new-category" placeholder="New category">
@@ -20,11 +24,6 @@
         <div class="main-content">
             <div class="navbar">
                 <input type="text" id="search" placeholder="Search notes">
-                <div>
-                    <button onclick="toggleNoteForm()">New Note</button>
-                    <button onclick="togglePinnedFilter()">Toggle Pinned</button>
-                    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-                </div>
             </div>
             <div class="content">
                 <div id="note-form" class="hidden">
